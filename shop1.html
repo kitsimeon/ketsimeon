@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="icon" href="logo2.webp">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+       body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: lightgreen; /* Change the background color */
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align the content */
+        }
+
+        h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.5em; /* Adjust font size */
+        }
+
+        nav {
+            margin-top: 10px;
+            text-align: center; /* Center align the navigation */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block; /* Change to inline-block */
+        }
+
+        li {
+            margin: 0 15px;
+            display: inline; /* Display list items inline */
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #333;
+        }
+
+        section#hero {
+            background-color: #41d4d9;
+            color: #fff;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 2em;
+        }
+
+        p {
+            margin: 15px 0;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        section#featured-products {
+            background-color: #fff;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            margin: 0;
+            color: #333;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Align items in the center */
+        }
+
+        .product {
+            flex: 0 0 300px; /* Each product takes up 300px width */
+            margin: 20px; /* Add margin between products */
+        }
+
+        .product:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .product h3 {
+            color: #41d4d9;
+            font-size: 1.2em;
+        }
+
+        .product p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        section#carousel {
+            background-color: #f8f8f8;
+            padding: 40px 0;
+        }
+
+        .featured-carousel {
+            display: flex;
+            justify-content: center; /* Align items in the center */
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .featured-item {
+            flex: 0 0 300px; /* Each item takes up 300px width */
+            margin-right: 20px; /* Add margin between items */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 280px; /* Adjust the height as needed */
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .featured-item p {
+            padding: 15px;
+        }
+
+        .featured-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        section#testimonials {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #41d4d9;
+            color: #fff;
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
+
+        section#about-us,
+        section#contact {
+            background-color: #fff;
+            padding: 60px 0;
+        }
+
+        section#about-us h2,
+        section#contact h2 {
+            color: #333;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        section#about-us p,
+        section#contact p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        section#contact form {
+            text-align: center;
+        }
+
+        section#contact input,
+        section#contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        section#contact button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        section#contact button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative; /* Change 'fixed' to 'relative' */
+            width: 100%;
+            clear: both;
+}
+     </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <img src="mac.jpg" width="100"; alt="Your Logo"> <!-- Add your logo here -->
+        <nav>
+            <ul>
+               <li><a href="homepage1.html" style="float: left; margin-left:30px;">HOME</a></li>   
+                <li><a href="shop1.html" style="float: left; margin-left:150px;">STORE</a></li>                         
+                <li><a href="signin.html" style="float: right; margin-right:30px;">SIGN-IN</a></li>
+				 <li><a href="cashier.html" style="float: right; margin-right:110px;">CASHIER</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="container">
+        <!-- Remove the text content -->
+    </div>
+</section>
+
+    <section id="featured-products"> 
+        <div class="container">
+            <a href="#" class="btn">Shop Now</a>
+            <div class="product-section">
+                <div class="product">
+                    <img src="ket5.webp" alt="Product 1">
+                    <h3>Dont Blame The Kids</h3>
+                    <p>Price: $1500</p>
+                    <p>Tagline: I'm not Pretty</p>
+                    <a href="cashier.html" class="btn">Add to Cart</a> 
+                </div>
+                <div class="product">
+                    <img src="logo12.jpg" alt="Product 2">
+                    <h3>Prettiest</h3>
+                    <p>Price: $1000</p>
+                    <p>Tagline: Dream Big</p> 
+                    <a href="cashier.html" class="btn">Add to Cart</a> 
+                </div>
+                <!-- Add more products here -->
+                <div class="product">
+                    <img src="logo9.jpg" alt="Product 3">
+                    <h3>Slant Sundried Hoodie</h3>
+                    <p>Price: 800</p>
+                    <p>Tagline: Simple yet stylish</p>
+                    <a href="cashier.html" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="logo4.jpg" alt="Product 4">
+                    <h3>Y2 Hoodie</h3>
+                    <p>Price: $1200</p>
+                    <p>Tagline: Timeless fashion</p>
+                    <a href="cashier.html" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="logo7.webp" alt="Product 5">
+                    <h3>Y2 Kids</h3>
+                    <p>Price: $2000</p>
+                    <p>Tagline: Stay stylish all year round</p>
+                    <a href="cashier.html" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="hehe.jpg" alt="Product 6">
+                    <h3>Printed Dress</h3>
+                    <p>Price: $1800</p>
+                    <p>Tagline: Perfect for any occasion</p>
+                    <a href="cashier.html" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel">
+        <div class="container">
+            <h3>Other Collection</h3>
+            <div class="featured-carousel">
+                <div class="featured-item">
+                    <img src="hehehe.jpg" alt="Featured Item 1">
+                    <p>Stylish Outfit 1</p>
+                </div>
+                <!-- Add more featured items as needed -->
+                <div class="featured-item">
+                    <img src="grr1.jpg" alt="Featured Item 2">
+                    <p>Stylish Outfit 2</p>
+                </div>
+				
+                <div class="featured-item">
+                    <img src="dbtk1.webp" alt="Featured Item 3">
+                    <p>Stylish Outfit 3</p>
+                </div>
+                <div class="featured-item">
+                    <img src="g.jpg" alt="Featured Item 4">
+                    <p>Stylish Outfit 4</p>
+                </div>
+                <div class="featured-item">
+                    <img src="huhu.jpg" alt="Featured Item 5">
+                    <p>Stylish Outfit 5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h3>What Our Customers Say</h3>
+            <div class="testimonial">
+                <p>"I love shopping at Your Clothing Store! The quality of the products is amazing, and the prices are unbeatable."</p>
+                <p>- Happy Customer</p>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+   
+
+    <section id="contact">
+        <div class="container">
+		<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <section id="contact">
+        <div class="container">
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <br>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <br>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <br>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+            
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Clothing Store. All rights reserved.</p>
+            <p>Developed By: Canny Caite Simeon</p>
+        </div>
+    </footer>
+</body>
+</html>
